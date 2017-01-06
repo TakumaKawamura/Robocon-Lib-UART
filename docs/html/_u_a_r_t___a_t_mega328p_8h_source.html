@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Robocon-Lib-UART: UART_ATMega328p.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Robocon-Lib-UART
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.12 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','検索');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">UART_ATMega328p.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_u_a_r_t___a_t_mega328p_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef UART_ATMEGA328P_H</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define UART_ATMEGA328P_H</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define nop() __asm__ __volatile__ (&quot;nop&quot;)</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define E_TX_INT {UCSR0B |= _BV(UDRIE0);} </span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define D_TX_INT {UCSR0B &amp;= ~_BV(UDRIE0);}</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define IS_E_TX_INT {((UCSR0B &amp; _BV(TXCIE0) != 0)}</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define TX_BUFFER_SIZE 64</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define RX_BUFFER_SIZE 64</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_u_a_r_t___a_t_mega328p_8h.html#ac1ceddcc6a4d08b6d962488ef6558c5f">UART_Begin</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_u_a_r_t___a_t_mega328p_8h.html#af0b4243c12c1992dbb643b34401747bc">UART_End</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;int16_t <a class="code" href="_u_a_r_t___a_t_mega328p_8h.html#a5d9fddbdee5cd53eb3a0b868b13f4d1e">UART_Read</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;int16_t <a class="code" href="_u_a_r_t___a_t_mega328p_8h.html#ad895122f03e2bc86d025dde0d5a678f3">UART_Peek</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;uint16_t <a class="code" href="_u_a_r_t___a_t_mega328p_8h.html#a20ab0f6adc06bafecc76720cda172ff9">UART_Available</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_u_a_r_t___a_t_mega328p_8h.html#acf8ebf7cd7a29ffb0c72e4903a21fca0">UART_Flush</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;uint8_t <a class="code" href="_u_a_r_t___a_t_mega328p_8h.html#a81d0c3173e47384f7702f2665e47f1ef">UART_Write</a>(uint8_t data);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="_u_a_r_t___a_t_mega328p_8h_html_ad895122f03e2bc86d025dde0d5a678f3"><div class="ttname"><a href="_u_a_r_t___a_t_mega328p_8h.html#ad895122f03e2bc86d025dde0d5a678f3">UART_Peek</a></div><div class="ttdeci">int16_t UART_Peek(void)</div><div class="ttdoc">1Byte読み込む(読み取り位置変更なし) </div><div class="ttdef"><b>Definition:</b> UART_ATMega328p.c:93</div></div>
+<div class="ttc" id="_u_a_r_t___a_t_mega328p_8h_html_af0b4243c12c1992dbb643b34401747bc"><div class="ttname"><a href="_u_a_r_t___a_t_mega328p_8h.html#af0b4243c12c1992dbb643b34401747bc">UART_End</a></div><div class="ttdeci">void UART_End(void)</div><div class="ttdoc">UART通信の停止 </div><div class="ttdef"><b>Definition:</b> UART_ATMega328p.c:66</div></div>
+<div class="ttc" id="_u_a_r_t___a_t_mega328p_8h_html_ac1ceddcc6a4d08b6d962488ef6558c5f"><div class="ttname"><a href="_u_a_r_t___a_t_mega328p_8h.html#ac1ceddcc6a4d08b6d962488ef6558c5f">UART_Begin</a></div><div class="ttdeci">void UART_Begin(void)</div><div class="ttdoc">UART通信の初期化 </div><div class="ttdef"><b>Definition:</b> UART_ATMega328p.c:47</div></div>
+<div class="ttc" id="_u_a_r_t___a_t_mega328p_8h_html_a20ab0f6adc06bafecc76720cda172ff9"><div class="ttname"><a href="_u_a_r_t___a_t_mega328p_8h.html#a20ab0f6adc06bafecc76720cda172ff9">UART_Available</a></div><div class="ttdeci">uint16_t UART_Available(void)</div><div class="ttdoc">受信バッファに到着しているデータサイズを取得する </div><div class="ttdef"><b>Definition:</b> UART_ATMega328p.c:105</div></div>
+<div class="ttc" id="_u_a_r_t___a_t_mega328p_8h_html_a81d0c3173e47384f7702f2665e47f1ef"><div class="ttname"><a href="_u_a_r_t___a_t_mega328p_8h.html#a81d0c3173e47384f7702f2665e47f1ef">UART_Write</a></div><div class="ttdeci">uint8_t UART_Write(uint8_t data)</div><div class="ttdoc">データを1Byte送信する </div><div class="ttdef"><b>Definition:</b> UART_ATMega328p.c:145</div></div>
+<div class="ttc" id="_u_a_r_t___a_t_mega328p_8h_html_acf8ebf7cd7a29ffb0c72e4903a21fca0"><div class="ttname"><a href="_u_a_r_t___a_t_mega328p_8h.html#acf8ebf7cd7a29ffb0c72e4903a21fca0">UART_Flush</a></div><div class="ttdeci">void UART_Flush(void)</div><div class="ttdoc">受信バッファを強制的に初期化する </div><div class="ttdef"><b>Definition:</b> UART_ATMega328p.c:117</div></div>
+<div class="ttc" id="_u_a_r_t___a_t_mega328p_8h_html_a5d9fddbdee5cd53eb3a0b868b13f4d1e"><div class="ttname"><a href="_u_a_r_t___a_t_mega328p_8h.html#a5d9fddbdee5cd53eb3a0b868b13f4d1e">UART_Read</a></div><div class="ttdeci">int16_t UART_Read(void)</div><div class="ttdoc">1Byte読み込む </div><div class="ttdef"><b>Definition:</b> UART_ATMega328p.c:79</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

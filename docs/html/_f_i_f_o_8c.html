@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Robocon-Lib-UART: FIFO.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Robocon-Lib-UART
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.12 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','検索');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">FIFO.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>1Byte ソフトウェアFIFOバッファのライブラリ  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
+<code>#include &lt;avr/common.h&gt;</code><br />
+<code>#include &lt;avr/interrupt.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_f_i_f_o_8h_source.html">FIFO.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:aaf06c9f9e30f25578ccccbfbd2515b40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_i_f_o_8c.html#aaf06c9f9e30f25578ccccbfbd2515b40">FIFO_Clear</a> (<a class="el" href="structfifo__type__s.html">fifo_type_s</a> *fifo)</td></tr>
+<tr class="memdesc:aaf06c9f9e30f25578ccccbfbd2515b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期状態にする  <a href="#aaf06c9f9e30f25578ccccbfbd2515b40">[詳解]</a><br /></td></tr>
+<tr class="separator:aaf06c9f9e30f25578ccccbfbd2515b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fac2c2a8080c283a9794ee1b2bc2cf"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_i_f_o_8c.html#ad5fac2c2a8080c283a9794ee1b2bc2cf">FIFO_Size</a> (<a class="el" href="structfifo__type__s.html">fifo_type_s</a> *fifo)</td></tr>
+<tr class="memdesc:ad5fac2c2a8080c283a9794ee1b2bc2cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">FIFOのサイズを返す  <a href="#ad5fac2c2a8080c283a9794ee1b2bc2cf">[詳解]</a><br /></td></tr>
+<tr class="separator:ad5fac2c2a8080c283a9794ee1b2bc2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b68c023408dfa23e0fed7c131f3492"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_i_f_o_8c.html#ae6b68c023408dfa23e0fed7c131f3492">FIFO_Get</a> (<a class="el" href="structfifo__type__s.html">fifo_type_s</a> *fifo)</td></tr>
+<tr class="memdesc:ae6b68c023408dfa23e0fed7c131f3492"><td class="mdescLeft">&#160;</td><td class="mdescRight">データを取り出す  <a href="#ae6b68c023408dfa23e0fed7c131f3492">[詳解]</a><br /></td></tr>
+<tr class="separator:ae6b68c023408dfa23e0fed7c131f3492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641a7ee89d752a8ea265e55960296147"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_i_f_o_8c.html#a641a7ee89d752a8ea265e55960296147">FIFO_Peek</a> (<a class="el" href="structfifo__type__s.html">fifo_type_s</a> *fifo)</td></tr>
+<tr class="memdesc:a641a7ee89d752a8ea265e55960296147"><td class="mdescLeft">&#160;</td><td class="mdescRight">データを取り出す (読み取り位置変更なし)  <a href="#a641a7ee89d752a8ea265e55960296147">[詳解]</a><br /></td></tr>
+<tr class="separator:a641a7ee89d752a8ea265e55960296147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b4889056f3c8722be38a154545b9283"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_i_f_o_8c.html#a5b4889056f3c8722be38a154545b9283">FIFO_Put</a> (<a class="el" href="structfifo__type__s.html">fifo_type_s</a> *fifo, uint8_t putdata)</td></tr>
+<tr class="memdesc:a5b4889056f3c8722be38a154545b9283"><td class="mdescLeft">&#160;</td><td class="mdescRight">データを書き込む  <a href="#a5b4889056f3c8722be38a154545b9283">[詳解]</a><br /></td></tr>
+<tr class="separator:a5b4889056f3c8722be38a154545b9283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5155bf0653cc83e4ce599b9dce6eff27"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_i_f_o_8c.html#a5155bf0653cc83e4ce599b9dce6eff27">FIFO_Count</a> (<a class="el" href="structfifo__type__s.html">fifo_type_s</a> *fifo)</td></tr>
+<tr class="memdesc:a5155bf0653cc83e4ce599b9dce6eff27"><td class="mdescLeft">&#160;</td><td class="mdescRight">データのサイズを返す  <a href="#a5155bf0653cc83e4ce599b9dce6eff27">[詳解]</a><br /></td></tr>
+<tr class="separator:a5155bf0653cc83e4ce599b9dce6eff27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>1Byte ソフトウェアFIFOバッファのライブラリ </p>
+<p>USART, I2C(TWI), SPIなどのシリアル通信において必要となる、ソフトウェアバッファのライブラリです。 AVR以外でもつかえます。日本語で言うところのところてん式バッファ。先に放り込んだデータから順に読み出せます。 なお、このFIFOバッファは非上書きモードで動作します。 すなわち，フルの状態でさらにデータを追加しようとすると，エラーを吐き、最も古いデータを残します。</p>
+<dl class="section author"><dt>著者</dt><dd>T.Kawamura </dd></dl>
+<dl class="section version"><dt>バージョン</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2016-11-20 T.Kawamura 新規作成 </dd>
+<dd>
+2016-11-20 T.Kawamura FIFO_Peek関数を追加、その他軽微な修正 </dd>
+<dd>
+2016-11-22 T.Kawamura 軽微な修正</dd></dl>
+<dl class="section copyright"><dt>著作権所有</dt><dd>(C) 2016 T.Kawamura All rights reserved. </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="aaf06c9f9e30f25578ccccbfbd2515b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf06c9f9e30f25578ccccbfbd2515b40">&sect;&nbsp;</a></span>FIFO_Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FIFO_Clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfifo__type__s.html">fifo_type_s</a> *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初期状態にする </p>
+<p>インデックスの位置、バッファ内のデータの数を０にします。</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fifo</td><td>初期状態にするバッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5155bf0653cc83e4ce599b9dce6eff27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5155bf0653cc83e4ce599b9dce6eff27">&sect;&nbsp;</a></span>FIFO_Count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FIFO_Count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfifo__type__s.html">fifo_type_s</a> *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>データのサイズを返す </p>
+<p>バッファ内のデータのサイズを返します。(1Byte)</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fifo</td><td>バッファ(参照渡し) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>バッファに入っているデータのサイズ </dd></dl>
+
+</div>
+</div>
+<a id="ae6b68c023408dfa23e0fed7c131f3492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6b68c023408dfa23e0fed7c131f3492">&sect;&nbsp;</a></span>FIFO_Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t FIFO_Get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfifo__type__s.html">fifo_type_s</a> *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>データを取り出す </p>
+<p>バッファ内のデータを1Byte取り出します。</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fifo</td><td>データを取り出すバッファ(参照渡し) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>エラー </td></tr>
+    <tr><td class="paramname">0~255</td><td>取り出したデータ（1Byte） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a641a7ee89d752a8ea265e55960296147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641a7ee89d752a8ea265e55960296147">&sect;&nbsp;</a></span>FIFO_Peek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t FIFO_Peek </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfifo__type__s.html">fifo_type_s</a> *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>データを取り出す (読み取り位置変更なし) </p>
+<p>バッファ内のデータを1Byte取り出します。(読み取り位置変更なし)</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fifo</td><td>データを取り出すバッファ(参照渡し) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>エラー </td></tr>
+    <tr><td class="paramname">0~255</td><td>取り出したデータ（1Byte） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5b4889056f3c8722be38a154545b9283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b4889056f3c8722be38a154545b9283">&sect;&nbsp;</a></span>FIFO_Put()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FIFO_Put </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfifo__type__s.html">fifo_type_s</a> *&#160;</td>
+          <td class="paramname"><em>fifo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>putdata</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>データを書き込む </p>
+<p>バッファにデータを1Byte書き込みます。</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fifo</td><td>データを書き込むバッファ(参照渡し) </td></tr>
+    <tr><td class="paramname">putdata</td><td>書き込むデータ(1Byte) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>エラー </td></tr>
+    <tr><td class="paramname">0以外</td><td>成功 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad5fac2c2a8080c283a9794ee1b2bc2cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5fac2c2a8080c283a9794ee1b2bc2cf">&sect;&nbsp;</a></span>FIFO_Size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t FIFO_Size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfifo__type__s.html">fifo_type_s</a> *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FIFOのサイズを返す </p>
+<p>FIFOバッファのデータサイズ(Byte)を返します。</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fifo</td><td>サイズ取得先のバッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>FIFOのサイズ(Byte) </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

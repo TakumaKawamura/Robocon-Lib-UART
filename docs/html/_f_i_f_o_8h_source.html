@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Robocon-Lib-UART: FIFO.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Robocon-Lib-UART
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.12 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','検索');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">FIFO.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_f_i_f_o_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef FIFO_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define FIFO_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structfifo__type__s.html">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  uint8_t *buffer;  </div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structfifo__type__s.html#afc900534ef3e56e8db34aa6591f77f18">   25</a></span>&#160;  int16_t <a class="code" href="structfifo__type__s.html#afc900534ef3e56e8db34aa6591f77f18">size</a>; </div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structfifo__type__s.html#a01e1d3155bdb4c6ab19efe10cb790495">   26</a></span>&#160;  <span class="keyword">volatile</span> uint8_t <a class="code" href="structfifo__type__s.html#a01e1d3155bdb4c6ab19efe10cb790495">getindex</a>;    </div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structfifo__type__s.html#afd31f88e16730909d8ba92baff70fc33">   27</a></span>&#160;  <span class="keyword">volatile</span> uint8_t <a class="code" href="structfifo__type__s.html#afd31f88e16730909d8ba92baff70fc33">putindex</a>;    </div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structfifo__type__s.html#a75ab8c92c712b6af1400479170dddde5">   28</a></span>&#160;  <span class="keyword">volatile</span> int16_t <a class="code" href="structfifo__type__s.html#a75ab8c92c712b6af1400479170dddde5">count</a>;   </div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}<a class="code" href="structfifo__type__s.html">fifo_type_s</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define FIFO_New(name, size)\</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">  static uint8_t fifobuff##name[size]; \</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">  fifo_type_s name = {fifobuff##name, (size), 0, 0, 0 };</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="_f_i_f_o_8h.html#aaf06c9f9e30f25578ccccbfbd2515b40">FIFO_Clear</a>(<a class="code" href="structfifo__type__s.html">fifo_type_s</a> *fifo);          <span class="comment">//初期化</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> int16_t <a class="code" href="_f_i_f_o_8h.html#ad5fac2c2a8080c283a9794ee1b2bc2cf">FIFO_Size</a>(<a class="code" href="structfifo__type__s.html">fifo_type_s</a> *fifo);            <span class="comment">//FIFOのサイズ</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> int16_t <a class="code" href="_f_i_f_o_8h.html#ae6b68c023408dfa23e0fed7c131f3492">FIFO_Get</a>(<a class="code" href="structfifo__type__s.html">fifo_type_s</a> *fifo);             <span class="comment">//１バイト読み込み</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> int16_t <a class="code" href="_f_i_f_o_8h.html#a641a7ee89d752a8ea265e55960296147">FIFO_Peek</a>(<a class="code" href="structfifo__type__s.html">fifo_type_s</a> *fifo);            <span class="comment">//1バイト読み込み（読み取り位置変更なし）</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> uint8_t <a class="code" href="_f_i_f_o_8h.html#a5b4889056f3c8722be38a154545b9283">FIFO_Put</a>(<a class="code" href="structfifo__type__s.html">fifo_type_s</a> *fifo, uint8_t putdata);    <span class="comment">//１バイト書き込み</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> uint16_t <a class="code" href="_f_i_f_o_8h.html#a5155bf0653cc83e4ce599b9dce6eff27">FIFO_Count</a>(<a class="code" href="structfifo__type__s.html">fifo_type_s</a> *fifo);          <span class="comment">//入っているデータのサイズ</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="_f_i_f_o_8h_html_a641a7ee89d752a8ea265e55960296147"><div class="ttname"><a href="_f_i_f_o_8h.html#a641a7ee89d752a8ea265e55960296147">FIFO_Peek</a></div><div class="ttdeci">int16_t FIFO_Peek(fifo_type_s *fifo)</div><div class="ttdoc">データを取り出す (読み取り位置変更なし) </div><div class="ttdef"><b>Definition:</b> FIFO.c:98</div></div>
+<div class="ttc" id="_f_i_f_o_8h_html_a5155bf0653cc83e4ce599b9dce6eff27"><div class="ttname"><a href="_f_i_f_o_8h.html#a5155bf0653cc83e4ce599b9dce6eff27">FIFO_Count</a></div><div class="ttdeci">uint16_t FIFO_Count(fifo_type_s *fifo)</div><div class="ttdoc">データのサイズを返す </div><div class="ttdef"><b>Definition:</b> FIFO.c:158</div></div>
+<div class="ttc" id="structfifo__type__s_html_a01e1d3155bdb4c6ab19efe10cb790495"><div class="ttname"><a href="structfifo__type__s.html#a01e1d3155bdb4c6ab19efe10cb790495">fifo_type_s::getindex</a></div><div class="ttdeci">volatile uint8_t getindex</div><div class="ttdoc">バッファサイズ </div><div class="ttdef"><b>Definition:</b> FIFO.h:26</div></div>
+<div class="ttc" id="_f_i_f_o_8h_html_a5b4889056f3c8722be38a154545b9283"><div class="ttname"><a href="_f_i_f_o_8h.html#a5b4889056f3c8722be38a154545b9283">FIFO_Put</a></div><div class="ttdeci">uint8_t FIFO_Put(fifo_type_s *fifo, uint8_t putdata)</div><div class="ttdoc">データを書き込む </div><div class="ttdef"><b>Definition:</b> FIFO.c:127</div></div>
+<div class="ttc" id="_f_i_f_o_8h_html_aaf06c9f9e30f25578ccccbfbd2515b40"><div class="ttname"><a href="_f_i_f_o_8h.html#aaf06c9f9e30f25578ccccbfbd2515b40">FIFO_Clear</a></div><div class="ttdeci">void FIFO_Clear(fifo_type_s *fifo)</div><div class="ttdoc">初期状態にする </div><div class="ttdef"><b>Definition:</b> FIFO.c:32</div></div>
+<div class="ttc" id="structfifo__type__s_html_afd31f88e16730909d8ba92baff70fc33"><div class="ttname"><a href="structfifo__type__s.html#afd31f88e16730909d8ba92baff70fc33">fifo_type_s::putindex</a></div><div class="ttdeci">volatile uint8_t putindex</div><div class="ttdoc">読み込むデータの位置 </div><div class="ttdef"><b>Definition:</b> FIFO.h:27</div></div>
+<div class="ttc" id="structfifo__type__s_html_a75ab8c92c712b6af1400479170dddde5"><div class="ttname"><a href="structfifo__type__s.html#a75ab8c92c712b6af1400479170dddde5">fifo_type_s::count</a></div><div class="ttdeci">volatile int16_t count</div><div class="ttdoc">書き込むデータの位置 </div><div class="ttdef"><b>Definition:</b> FIFO.h:28</div></div>
+<div class="ttc" id="_f_i_f_o_8h_html_ae6b68c023408dfa23e0fed7c131f3492"><div class="ttname"><a href="_f_i_f_o_8h.html#ae6b68c023408dfa23e0fed7c131f3492">FIFO_Get</a></div><div class="ttdeci">int16_t FIFO_Get(fifo_type_s *fifo)</div><div class="ttdoc">データを取り出す </div><div class="ttdef"><b>Definition:</b> FIFO.c:64</div></div>
+<div class="ttc" id="structfifo__type__s_html_afc900534ef3e56e8db34aa6591f77f18"><div class="ttname"><a href="structfifo__type__s.html#afc900534ef3e56e8db34aa6591f77f18">fifo_type_s::size</a></div><div class="ttdeci">int16_t size</div><div class="ttdoc">バッファ </div><div class="ttdef"><b>Definition:</b> FIFO.h:25</div></div>
+<div class="ttc" id="_f_i_f_o_8h_html_ad5fac2c2a8080c283a9794ee1b2bc2cf"><div class="ttname"><a href="_f_i_f_o_8h.html#ad5fac2c2a8080c283a9794ee1b2bc2cf">FIFO_Size</a></div><div class="ttdeci">int16_t FIFO_Size(fifo_type_s *fifo)</div><div class="ttdoc">FIFOのサイズを返す </div><div class="ttdef"><b>Definition:</b> FIFO.c:51</div></div>
+<div class="ttc" id="structfifo__type__s_html"><div class="ttname"><a href="structfifo__type__s.html">fifo_type_s</a></div><div class="ttdef"><b>Definition:</b> FIFO.h:23</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>
